@@ -1,0 +1,1 @@
+App icon generated with built-in image generation. A slate-blue ledger and a rising snapshot line on a porcelain tile. Contains no user financial data. build.py creates macOS iconset sizes and AppIcon.icns.

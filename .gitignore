@@ -1,0 +1,30 @@
+# Default deny: only reviewed source and documentation may be tracked.
+/*
+!/.gitignore
+!/README.md
+!/AGENTS.md
+!/src/
+!/tools/
+/src/*
+!/src/macapp/
+/src/macapp/*
+!/src/macapp/*.swift
+!/src/macapp/build.py
+!/src/macapp/assets/
+/src/macapp/assets/*
+!/src/macapp/assets/AppIcon.png
+!/src/macapp/assets/README.md
+/tools/*
+!/tools/check_privacy.py
+# Never track ledgers, exports, screenshots, local settings, or builds.
+**/.cache/
+**/__pycache__/
+**/.DS_Store
+*.json
+*.csv
+*.xlsx
+*.xls
+*.pdf
+*.app/
+*.log
+.env*
