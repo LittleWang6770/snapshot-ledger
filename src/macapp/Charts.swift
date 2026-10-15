@@ -49,7 +49,7 @@ struct WealthChart: View {
                 RuleMark(x: .value("日期", r.calendarDate)).foregroundStyle(Theme.secondary.opacity(0.5)).lineStyle(StrokeStyle(lineWidth: 1, dash: [4, 4]))
             }
         }
-        .chartForegroundStyleScale(domain: ["人民币资产", "美元资产", "待还欠款"], range: [Theme.palette[0], Theme.palette[1], Theme.palette[3]])
+        .chartForegroundStyleScale(domain: ["人民币资产", "美元资产", "待还欠款"], range: [Theme.wealthCNY, Theme.wealthUSD, Theme.wealthDebt])
         .chartLegend(position: .bottom, alignment: .leading)
         .chartOverlay { proxy in
             GeometryReader { geometry in
@@ -66,7 +66,7 @@ struct WealthChart: View {
                                 }
                             }
                         if let r = selected, let x = proxy.position(forX: r.calendarDate) {
-                            AmountTooltip(title: r.date + " · 人民币", rows: [("人民币资产", r.cny, Theme.palette[0]), ("美元资产折合", r.usdCNY, Theme.palette[1]), ("待还欠款", r.debt, Theme.palette[3])])
+                            AmountTooltip(title: r.date + " · 人民币", rows: [("人民币资产", r.cny, Theme.wealthCNY), ("美元资产折合", r.usdCNY, Theme.wealthUSD), ("待还欠款", r.debt, Theme.wealthDebt)])
                                 .position(x: ChartSelection.tooltipX(plot.minX + x, width: geometry.size.width), y: plot.minY + 62)
                         }
                     }
