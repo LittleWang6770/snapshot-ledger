@@ -41,15 +41,16 @@ struct WealthChart: View {
     var body: some View {
         Chart {
             ForEach(records) { r in
-                LineMark(x: .value("日期", r.calendarDate), y: .value("金额", r.cny)).foregroundStyle(by: .value("类型", "人民币资产")).symbol(Circle())
-                LineMark(x: .value("日期", r.calendarDate), y: .value("金额", r.usdCNY)).foregroundStyle(by: .value("类型", "美元资产")).symbol(Circle())
-                LineMark(x: .value("日期", r.calendarDate), y: .value("金额", r.debt)).foregroundStyle(by: .value("类型", "待还欠款")).symbol(Circle())
+                LineMark(x: .value("日期", r.calendarDate), y: .value("金额", r.cny)).foregroundStyle(by: .value("类型", "人民币资产")).symbol(by: .value("类型", "人民币资产"))
+                LineMark(x: .value("日期", r.calendarDate), y: .value("金额", r.usdCNY)).foregroundStyle(by: .value("类型", "美元资产")).symbol(by: .value("类型", "美元资产"))
+                LineMark(x: .value("日期", r.calendarDate), y: .value("金额", r.debt)).foregroundStyle(by: .value("类型", "待还欠款")).symbol(by: .value("类型", "待还欠款"))
             }
             if let r = selected {
                 RuleMark(x: .value("日期", r.calendarDate)).foregroundStyle(Theme.secondary.opacity(0.5)).lineStyle(StrokeStyle(lineWidth: 1, dash: [4, 4]))
             }
         }
         .chartForegroundStyleScale(domain: ["人民币资产", "美元资产", "待还欠款"], range: [Theme.wealthCNY, Theme.wealthUSD, Theme.wealthDebt])
+        .chartSymbolScale(domain: ["人民币资产", "美元资产", "待还欠款"], range: [BasicChartSymbolShape.circle, .diamond, .square])
         .chartLegend(position: .bottom, alignment: .leading)
         .chartOverlay { proxy in
             GeometryReader { geometry in

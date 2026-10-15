@@ -7,7 +7,7 @@ enum Theme {
     static let accent = Color(hex:0x3D647A), selected = Color(hex:0xEAF0F4), input = Color(hex:0xF3F5F6), danger = Color(hex:0xA74740)
     static let palette: [Color] = [accent,Color(hex:0x688A80),Color(hex:0xB39563),Color(hex:0xB36C65)]
     // Separate hues for wealth series; keep controls and monthly chart colors independent.
-    static let wealthCNY = Color(hex:0x2563EB), wealthUSD = Color(hex:0xB77900), wealthDebt = Color(hex:0xB36C65)
+    static let wealthCNY = Color(hex:0x2563EB), wealthUSD = Color(hex:0x009E73), wealthDebt = Color(hex:0xB36C65)
 }
 extension Color { init(hex:UInt32) { self.init(.sRGB,red:Double((hex>>16)&255)/255,green:Double((hex>>8)&255)/255,blue:Double(hex&255)/255,opacity:1) } }
 struct Card<Content:View>: View {

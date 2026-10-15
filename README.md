@@ -38,3 +38,7 @@ build/财务快照.app/Contents/MacOS/SnapshotLedger --render-qa /tmp/snapshot-l
 ## v0.2.1
 
 财富折线图采用蓝色人民币资产、琥珀色美元资产和原有红色欠款；图例及悬停金额提示同步配色。Release 提供 macOS 14+ / Apple Silicon 应用压缩包，不附带任何账本或本地记录。
+
+## v0.2.2
+
+美元资产由琥珀色改为 Okabe–Ito 配色中的蓝绿色 `#009E73`，人民币资产保留蓝色，欠款保留原红色。三类资产使用圆形、菱形、方形节点，图例和悬停金额仍与曲线颜色一致，帮助辨认交叉点。参考 [Okabe–Ito](https://jfly.uni-koeln.de/color/) 和 [Nature 制图指南](https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/)；本 App 的组合保留自选蓝色和红色，并非完整套用某一科学配色方案。
